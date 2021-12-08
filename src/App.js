@@ -1,3 +1,4 @@
+import { AppProvider } from './AppContext.js';
 import { Routes, Route } from 'react-router-dom';
 import './App.scss';
 import Nav from './components/Nav';
@@ -7,16 +8,18 @@ import PageLogin from './pages/PageLogin';
 
 function App() {
 	return (
-		<div className="App">
-			<Nav />
-			<div className="content">
-				<Routes>
-					<Route path="/" element={<PageWelcome />} />
-					<Route path="register" element={<PageRegister />} />
-					<Route path="login" element={<PageLogin />} />
-				</Routes>
+		<AppProvider>
+			<div className="App">
+				<Nav />
+				<div className="content">
+					<Routes>
+						<Route path="/" element={<PageWelcome />} />
+						<Route path="register" element={<PageRegister />} />
+						<Route path="login" element={<PageLogin />} />
+					</Routes>
+				</div>
 			</div>
-		</div>
+		</AppProvider>
 	);
 }
 

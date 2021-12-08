@@ -1,7 +1,12 @@
+import { useContext } from 'react';
+import AppContext from '../AppContext';
+
 const PageRegister = () => {
+	const { siteStatus} = useContext(AppContext);
 	return (
 		<>
-		This is the register page.
+		<p>This is the register page.</p>
+		<p>STATUS: <span className="highlight">{siteStatus.toUpperCase()}</span></p>
 		</>
 	)
 }
